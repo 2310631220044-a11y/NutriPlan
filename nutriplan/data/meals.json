@@ -1,0 +1,202 @@
+[
+  {
+    "name": "Nasi Merah + Ayam Bumbu Kuning + Tumis Bayam",
+    "slot": "main",
+    "prep": "Masak nasi penuh, ayam dimarinasi lalu tumis setengah matang, bayam ditumis cepat.",
+    "storage": "Ayam setengah matang: kulkas 2 hari. Nasi matang: freezer 5-7 hari. Bayam tumis: kulkas 2 hari.",
+    "ingredients": ["beras merah", "ayam fillet", "bayam", "bawang putih", "minyak"],
+    "allergies": [],
+    "nutrition": { "kcal": 520, "protein": 36, "fat": 15, "carb": 61 },
+    "estimatedCost": 22000
+  },
+  {
+    "name": "Nasi + Tempe Orek + Telur Rebus + Lalapan",
+    "slot": "main",
+    "prep": "Rebus telur untuk 2-3 hari, tempe diungkep bumbu lalu tumis saat akan makan.",
+    "storage": "Telur rebus: kulkas 3 hari. Tempe matang: kulkas 2 hari. Lalapan segar: 1 hari.",
+    "ingredients": ["beras", "tempe", "telur", "timun", "selada", "cabai"],
+    "allergies": [],
+    "nutrition": { "kcal": 470, "protein": 26, "fat": 16, "carb": 58 },
+    "estimatedCost": 17000
+  },
+  {
+    "name": "Oat Pisang + Susu + Kacang",
+    "slot": "breakfast",
+    "prep": "Siapkan overnight oat malam sebelumnya, topping ditambahkan saat disajikan.",
+    "storage": "Overnight oat: kulkas 2 hari dalam wadah tertutup.",
+    "ingredients": ["oat", "pisang", "susu", "kacang tanah"],
+    "allergies": ["susu", "kacang"],
+    "nutrition": { "kcal": 360, "protein": 14, "fat": 10, "carb": 55 },
+    "estimatedCost": 13000
+  },
+  {
+    "name": "Roti Gandum + Telur Orak-arik + Tomat",
+    "slot": "breakfast",
+    "prep": "Telur dibumbui ringan, roti dipanggang sebentar saat akan makan.",
+    "storage": "Telur orak-arik: kulkas 1 hari. Roti: suhu ruang 2-3 hari.",
+    "ingredients": ["roti gandum", "telur", "tomat"],
+    "allergies": ["telur"],
+    "nutrition": { "kcal": 330, "protein": 17, "fat": 13, "carb": 34 },
+    "estimatedCost": 14000
+  },
+  {
+    "name": "Sup Tahu Sayur + Nasi",
+    "slot": "main",
+    "prep": "Potong semua sayur di awal, rebus sup batch besar untuk 2 hari.",
+    "storage": "Sup matang: kulkas 2 hari. Jangan simpan lebih dari 2 jam di suhu ruang.",
+    "ingredients": ["tahu", "wortel", "kentang", "kol", "beras", "bawang putih"],
+    "allergies": [],
+    "nutrition": { "kcal": 410, "protein": 16, "fat": 9, "carb": 62 },
+    "estimatedCost": 15000
+  },
+  {
+    "name": "Ikan Panggang + Jagung Rebus + Brokoli",
+    "slot": "main",
+    "prep": "Marinasi ikan 20 menit, panggang separuh matang lalu panaskan saat makan.",
+    "storage": "Ikan matang: kulkas 2 hari. Jagung rebus: kulkas 3 hari.",
+    "ingredients": ["ikan", "jagung", "brokoli", "jeruk nipis"],
+    "allergies": ["ikan"],
+    "nutrition": { "kcal": 460, "protein": 34, "fat": 13, "carb": 46 },
+    "estimatedCost": 25000
+  },
+  {
+    "name": "Nasi + Ayam Kecap + Capcay",
+    "slot": "main",
+    "prep": "Ayam dipotong porsi kecil agar cepat matang, capcay diblansir dulu untuk hemat waktu.",
+    "storage": "Ayam matang: kulkas 2 hari. Sayur capcay: kulkas 2 hari.",
+    "ingredients": ["beras", "ayam fillet", "wortel", "kol", "kembang kol", "kecap"],
+    "allergies": [],
+    "nutrition": { "kcal": 500, "protein": 33, "fat": 14, "carb": 60 },
+    "estimatedCost": 21000
+  },
+  {
+    "name": "Smoothie Pisang Oat + Telur Rebus",
+    "slot": "breakfast",
+    "prep": "Bahan smoothie ditakar di malam hari dalam wadah, blender saat pagi.",
+    "storage": "Smoothie: terbaik langsung diminum. Telur rebus: kulkas 3 hari.",
+    "ingredients": ["pisang", "oat", "yogurt", "telur"],
+    "allergies": ["susu", "telur"],
+    "nutrition": { "kcal": 350, "protein": 19, "fat": 10, "carb": 44 },
+    "estimatedCost": 15000
+  },
+  {
+    "name": "Snack Buah + Edamame",
+    "slot": "snack",
+    "prep": "Buah dipotong seperlunya, edamame direbus 7 menit lalu simpan porsi kecil.",
+    "storage": "Edamame matang: kulkas 3 hari. Buah potong: kulkas 1 hari.",
+    "ingredients": ["apel", "pepaya", "edamame"],
+    "allergies": ["kedelai"],
+    "nutrition": { "kcal": 210, "protein": 11, "fat": 4, "carb": 30 },
+    "estimatedCost": 11000
+  },
+  {
+    "name": "Yogurt Granola + Buah",
+    "slot": "snack",
+    "prep": "Simpan granola terpisah agar tetap renyah, campur saat disajikan.",
+    "storage": "Yogurt tertutup: kulkas sampai tanggal kedaluwarsa. Buah potong: 1 hari.",
+    "ingredients": ["yogurt", "granola", "pisang", "stroberi"],
+    "allergies": ["susu"],
+    "nutrition": { "kcal": 240, "protein": 9, "fat": 7, "carb": 35 },
+    "estimatedCost": 16000
+  },
+  {
+    "name": "Bubur Oat Ayam Suwir + Wortel",
+    "slot": "breakfast",
+    "prep": "Masak oat agak kental, ayam disuwir lalu campur saat penyajian.",
+    "storage": "Bubur oat: kulkas 1 hari. Ayam suwir matang: kulkas 2 hari.",
+    "ingredients": ["oat", "ayam fillet", "wortel", "bawang putih"],
+    "allergies": [],
+    "nutrition": { "kcal": 380, "protein": 24, "fat": 9, "carb": 45 },
+    "estimatedCost": 15000
+  },
+  {
+    "name": "Nasi Jagung + Tahu Tempe Bacem + Urap",
+    "slot": "main",
+    "prep": "Bacem tahu tempe untuk 2 hari, kelapa urap disajikan terpisah.",
+    "storage": "Tahu tempe bacem: kulkas 2 hari. Urap: kulkas 1 hari.",
+    "ingredients": ["jagung", "tahu", "tempe", "kol", "bayam"],
+    "allergies": [],
+    "nutrition": { "kcal": 490, "protein": 23, "fat": 14, "carb": 66 },
+    "estimatedCost": 18000
+  },
+  {
+    "name": "Nasi + Tuna Sambal Matah + Tumis Buncis",
+    "slot": "main",
+    "prep": "Tuna dimarinasi ringan, tumis buncis setengah matang untuk finishing cepat.",
+    "storage": "Tuna matang: kulkas 2 hari. Buncis tumis: kulkas 2 hari.",
+    "ingredients": ["beras", "ikan", "cabai", "tomat", "brokoli"],
+    "allergies": ["ikan"],
+    "nutrition": { "kcal": 500, "protein": 35, "fat": 13, "carb": 58 },
+    "estimatedCost": 23000
+  },
+  {
+    "name": "Kentang Panggang + Ayam Lada Hitam + Buncis",
+    "slot": "main",
+    "prep": "Kentang dipanggang batch 2 hari, ayam ditumis lada hitam saat makan.",
+    "storage": "Kentang panggang: kulkas 3 hari. Ayam matang: kulkas 2 hari.",
+    "ingredients": ["kentang", "ayam fillet", "bawang putih", "kol"],
+    "allergies": [],
+    "nutrition": { "kcal": 510, "protein": 34, "fat": 15, "carb": 57 },
+    "estimatedCost": 21000
+  },
+  {
+    "name": "Mie Shirataki Sayur + Telur Rebus",
+    "slot": "main",
+    "prep": "Rebus shirataki dan telur lebih awal, tumis sayur cepat saat penyajian.",
+    "storage": "Shirataki matang: kulkas 2 hari. Telur rebus: kulkas 3 hari.",
+    "ingredients": ["kol", "wortel", "telur", "bawang putih"],
+    "allergies": ["telur"],
+    "nutrition": { "kcal": 390, "protein": 20, "fat": 11, "carb": 48 },
+    "estimatedCost": 16000
+  },
+  {
+    "name": "Wrap Ayam Sayur + Saus Yogurt",
+    "slot": "main",
+    "prep": "Ayam dipanggang tipis, sayur dipotong dan disimpan kering agar tetap segar.",
+    "storage": "Ayam matang: kulkas 2 hari. Sayur wrap: kulkas 2 hari.",
+    "ingredients": ["ayam fillet", "selada", "tomat", "yogurt"],
+    "allergies": ["susu"],
+    "nutrition": { "kcal": 430, "protein": 31, "fat": 12, "carb": 44 },
+    "estimatedCost": 20000
+  },
+  {
+    "name": "Puding Chia Susu + Mangga",
+    "slot": "snack",
+    "prep": "Campur chia dan susu semalam, topping mangga saat akan makan.",
+    "storage": "Puding chia: kulkas 2 hari.",
+    "ingredients": ["susu", "pisang", "stroberi"],
+    "allergies": ["susu"],
+    "nutrition": { "kcal": 230, "protein": 10, "fat": 8, "carb": 29 },
+    "estimatedCost": 15000
+  },
+  {
+    "name": "Kacang Rebus + Pisang",
+    "slot": "snack",
+    "prep": "Rebus kacang untuk 2-3 porsi lalu simpan dalam wadah kecil.",
+    "storage": "Kacang rebus: kulkas 3 hari. Pisang: suhu ruang 2 hari.",
+    "ingredients": ["kacang tanah", "pisang"],
+    "allergies": ["kacang"],
+    "nutrition": { "kcal": 250, "protein": 9, "fat": 9, "carb": 33 },
+    "estimatedCost": 10000
+  },
+  {
+    "name": "Roti Gandum + Alpukat + Telur",
+    "slot": "breakfast",
+    "prep": "Roti dipanggang sebentar, telur direbus batch harian, alpukat dihaluskan saat sajian.",
+    "storage": "Telur rebus: kulkas 3 hari. Alpukat tumbuk: terbaik dikonsumsi langsung.",
+    "ingredients": ["roti gandum", "telur", "tomat"],
+    "allergies": ["telur"],
+    "nutrition": { "kcal": 360, "protein": 15, "fat": 14, "carb": 40 },
+    "estimatedCost": 15000
+  },
+  {
+    "name": "Smoothie Bayam Pisang + Oat",
+    "slot": "breakfast",
+    "prep": "Siapkan pack blender berisi bayam-pisang-oat, blender saat pagi.",
+    "storage": "Pack bahan smoothie: kulkas 1 hari.",
+    "ingredients": ["bayam", "pisang", "oat", "susu"],
+    "allergies": ["susu"],
+    "nutrition": { "kcal": 340, "protein": 13, "fat": 8, "carb": 54 },
+    "estimatedCost": 14000
+  }
+]

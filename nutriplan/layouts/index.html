@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NutriPlan - Solusi Praktis Menu Sehat, Terjangkau, dan Terencana</title>
+	<link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+</head>
+<body>
+	<!-- TAG: BACKGROUND -->
+	<div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+	<div class="bg-shape bg-shape-b" aria-hidden="true"></div>
+
+	<!-- TAG: HERO -->
+	<header class="hero">
+		<p class="eyebrow">NutriPlan</p>
+		<h1>Solusi Praktis Menu Sehat, Terjangkau, dan Terencana</h1>
+		<p class="subtitle">
+			Rancang meal prep 3/5/7 hari sesuai kebutuhan gizi, alergi, preferensi, bahan tersedia, dan anggaran belanja.
+		</p>
+	</header>
+
+	<main class="container">
+		<!-- TAG: CARD-INFO -->
+		<section class="card reveal intro-card">
+			<h2>Tentang NutriPlan</h2>
+			<p>
+				NutriPlan membantu mahasiswa, pekerja muda, dan keluarga merancang menu sehat yang praktis dengan biaya terkontrol.
+				Sistem menggabungkan profil gizi, preferensi, alergi, durasi rencana, dan bahan tersedia menjadi satu perencanaan meal prep.
+			</p>
+			<p class="academic-note">
+				Latar masalah yang diangkat adalah tingginya konsumsi makanan praktis, rendahnya perencanaan menu, dan belum terintegrasinya
+				solusi gizi personal dengan perencanaan belanja. Karena itu, pendekatan NutriPlan menekankan akurasi kebutuhan gizi,
+				keterjangkauan biaya, dan kemudahan implementasi meal prep harian.
+			</p>
+			<div class="flow-grid">
+				<div>
+					<h3>Input</h3>
+					<p>Profil gizi, preferensi/alergi, budget, durasi, porsi, frekuensi makan, dan stok bahan.</p>
+				</div>
+				<div>
+					<h3>Proses</h3>
+					<p>Pencocokan kebutuhan gizi dengan database menu, filter kondisi khusus, dan optimasi anggaran.</p>
+				</div>
+				<div>
+					<h3>Output</h3>
+					<p>Rencana meal prep, daftar belanja, estimasi biaya, panduan penyimpanan, dan ringkasan gizi.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- TAG: CARD-INPUT -->
+		<section class="card reveal">
+			<h2>Input Data Perencanaan</h2>
+			<form id="planner-form" class="planner-grid">
+				<label>
+					Jenis Kelamin
+					<select id="gender" required>
+						<option value="female">Perempuan</option>
+						<option value="male">Laki-laki</option>
+					</select>
+				</label>
+
+				<label>
+					Usia (tahun)
+					<input id="age" type="number" min="18" max="70" value="20" required>
+				</label>
+
+				<label>
+					Berat Badan (kg)
+					<input id="weight" type="number" min="35" max="150" value="50" required>
+				</label>
+
+				<label>
+					Durasi Menu
+					<select id="duration" required>
+						<option value="3">3 hari</option>
+						<option value="5" selected>5 hari</option>
+						<option value="7">7 hari</option>
+					</select>
+				</label>
+
+				<label>
+					Porsi per Makan
+					<input id="servings" type="number" min="1" max="6" value="1" required>
+				</label>
+
+				<label>
+					Frekuensi Makan per Hari
+					<select id="mealsPerDay" required>
+						<option value="2">2x</option>
+						<option value="3" selected>3x</option>
+						<option value="4">4x</option>
+					</select>
+				</label>
+
+				<label class="span-2">
+					Makanan Tidak Disukai (pisahkan koma)
+					<input id="dislikes" type="text" placeholder="contoh: ikan, jamur">
+				</label>
+
+				<label class="span-2">
+					Alergi/Kondisi Khusus (pisahkan koma)
+					<input id="allergies" type="text" placeholder="contoh: udang, susu">
+				</label>
+
+				<label>
+					Budget Belanja (Rp)
+					<input id="budget" type="number" min="30000" step="1000" value="150000" required>
+				</label>
+
+				<label>
+					Waktu Meal Prep
+					<select id="cookTime">
+						<option value="short">30-60 menit</option>
+						<option value="medium" selected>1-2 jam</option>
+						<option value="long">2-3 jam</option>
+					</select>
+				</label>
+
+				<label>
+					Fokus Tujuan Menu
+					<select id="dietGoal">
+						<option value="balanced" selected>Seimbang</option>
+						<option value="highProtein">Tinggi Protein</option>
+						<option value="budget">Super Hemat</option>
+						<option value="plantForward">Lebih Banyak Nabati</option>
+					</select>
+				</label>
+
+				<label class="span-2">
+					Bahan Sudah Tersedia di Rumah (pisahkan koma)
+					<input id="stock" type="text" placeholder="contoh: telur, tempe, bawang putih">
+				</label>
+
+				<div class="actions span-2">
+					<button type="submit" class="cta">Buat Rencana NutriPlan</button>
+					<button type="button" id="pdf-btn" class="ghost">Ekspor Laporan PDF</button>
+				</div>
+			</form>
+		</section>
+
+		<!-- TAG: CARD-OUTPUT -->
+		<section class="outputs reveal" id="outputs" hidden>
+			<article class="card">
+				<h2>1) Rencana Meal Prep</h2>
+				<div id="meal-plan" class="content-block"></div>
+			</article>
+
+			<article class="card">
+				<h2>2) Daftar Belanja + Estimasi Biaya</h2>
+				<div id="shopping-list" class="content-block"></div>
+			</article>
+
+			<article class="card">
+				<h2>3) Panduan Meal Prep & Penyimpanan</h2>
+				<div id="prep-guide" class="content-block"></div>
+			</article>
+
+			<article class="card">
+				<h2>4) Ringkasan Gizi per Porsi</h2>
+				<div id="nutrition-summary" class="content-block"></div>
+			</article>
+		</section>
+	</main>
+
+	<footer class="footnote">
+		<p>
+			Edukatif: hasil perhitungan adalah estimasi untuk perencanaan umum, bukan pengganti konsultasi ahli gizi.
+		</p>
+	</footer>
+
+	<!-- TAG: DATA-INJECT -->
+	<script id="meals-data" type="application/json">{{ .Site.Data.meals | jsonify }}</script>
+	<script id="prices-data" type="application/json">{{ index .Site.Data "ingredient-prices" | jsonify }}</script>
+	<!-- TAG: PDF-LIB -->
+	<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+
+	<!-- TAG: APP-LOGIC -->
+	<script src="{{ "js/main.js" | relURL }}"></script>
+</body>
+</html>

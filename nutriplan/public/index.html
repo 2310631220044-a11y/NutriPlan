@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+	<meta name="generator" content="Hugo 0.160.1"><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>NutriPlan - Solusi Praktis Menu Sehat, Terjangkau, dan Terencana</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	
+	<div class="bg-shape bg-shape-a" aria-hidden="true"></div>
+	<div class="bg-shape bg-shape-b" aria-hidden="true"></div>
+
+	
+	<header class="hero">
+		<p class="eyebrow">NutriPlan</p>
+		<h1>Solusi Praktis Menu Sehat, Terjangkau, dan Terencana</h1>
+		<p class="subtitle">
+			Rancang meal prep 3/5/7 hari sesuai kebutuhan gizi, alergi, preferensi, bahan tersedia, dan anggaran belanja.
+		</p>
+	</header>
+
+	<main class="container">
+		
+		<section class="card reveal intro-card">
+			<h2>Tentang NutriPlan</h2>
+			<p>
+				NutriPlan membantu mahasiswa, pekerja muda, dan keluarga merancang menu sehat yang praktis dengan biaya terkontrol.
+				Sistem menggabungkan profil gizi, preferensi, alergi, durasi rencana, dan bahan tersedia menjadi satu perencanaan meal prep.
+			</p>
+			<p class="academic-note">
+				Latar masalah yang diangkat adalah tingginya konsumsi makanan praktis, rendahnya perencanaan menu, dan belum terintegrasinya
+				solusi gizi personal dengan perencanaan belanja. Karena itu, pendekatan NutriPlan menekankan akurasi kebutuhan gizi,
+				keterjangkauan biaya, dan kemudahan implementasi meal prep harian.
+			</p>
+			<div class="flow-grid">
+				<div>
+					<h3>Input</h3>
+					<p>Profil gizi, preferensi/alergi, budget, durasi, porsi, frekuensi makan, dan stok bahan.</p>
+				</div>
+				<div>
+					<h3>Proses</h3>
+					<p>Pencocokan kebutuhan gizi dengan database menu, filter kondisi khusus, dan optimasi anggaran.</p>
+				</div>
+				<div>
+					<h3>Output</h3>
+					<p>Rencana meal prep, daftar belanja, estimasi biaya, panduan penyimpanan, dan ringkasan gizi.</p>
+				</div>
+			</div>
+		</section>
+
+		
+		<section class="card reveal">
+			<h2>Input Data Perencanaan</h2>
+			<form id="planner-form" class="planner-grid">
+				<label>
+					Jenis Kelamin
+					<select id="gender" required>
+						<option value="female">Perempuan</option>
+						<option value="male">Laki-laki</option>
+					</select>
+				</label>
+
+				<label>
+					Usia (tahun)
+					<input id="age" type="number" min="18" max="70" value="20" required>
+				</label>
+
+				<label>
+					Berat Badan (kg)
+					<input id="weight" type="number" min="35" max="150" value="50" required>
+				</label>
+
+				<label>
+					Durasi Menu
+					<select id="duration" required>
+						<option value="3">3 hari</option>
+						<option value="5" selected>5 hari</option>
+						<option value="7">7 hari</option>
+					</select>
+				</label>
+
+				<label>
+					Porsi per Makan
+					<input id="servings" type="number" min="1" max="6" value="1" required>
+				</label>
+
+				<label>
+					Frekuensi Makan per Hari
+					<select id="mealsPerDay" required>
+						<option value="2">2x</option>
+						<option value="3" selected>3x</option>
+						<option value="4">4x</option>
+					</select>
+				</label>
+
+				<label class="span-2">
+					Makanan Tidak Disukai (pisahkan koma)
+					<input id="dislikes" type="text" placeholder="contoh: ikan, jamur">
+				</label>
+
+				<label class="span-2">
+					Alergi/Kondisi Khusus (pisahkan koma)
+					<input id="allergies" type="text" placeholder="contoh: udang, susu">
+				</label>
+
+				<label>
+					Budget Belanja (Rp)
+					<input id="budget" type="number" min="30000" step="1000" value="150000" required>
+				</label>
+
+				<label>
+					Waktu Meal Prep
+					<select id="cookTime">
+						<option value="short">30-60 menit</option>
+						<option value="medium" selected>1-2 jam</option>
+						<option value="long">2-3 jam</option>
+					</select>
+				</label>
+
+				<label>
+					Fokus Tujuan Menu
+					<select id="dietGoal">
+						<option value="balanced" selected>Seimbang</option>
+						<option value="highProtein">Tinggi Protein</option>
+						<option value="budget">Super Hemat</option>
+						<option value="plantForward">Lebih Banyak Nabati</option>
+					</select>
+				</label>
+
+				<label class="span-2">
+					Bahan Sudah Tersedia di Rumah (pisahkan koma)
+					<input id="stock" type="text" placeholder="contoh: telur, tempe, bawang putih">
+				</label>
+
+				<div class="actions span-2">
+					<button type="submit" class="cta">Buat Rencana NutriPlan</button>
+					<button type="button" id="pdf-btn" class="ghost">Ekspor Laporan PDF</button>
+				</div>
+			</form>
+		</section>
+
+		
+		<section class="outputs reveal" id="outputs" hidden>
+			<article class="card">
+				<h2>1) Rencana Meal Prep</h2>
+				<div id="meal-plan" class="content-block"></div>
+			</article>
+
+			<article class="card">
+				<h2>2) Daftar Belanja + Estimasi Biaya</h2>
+				<div id="shopping-list" class="content-block"></div>
+			</article>
+
+			<article class="card">
+				<h2>3) Panduan Meal Prep & Penyimpanan</h2>
+				<div id="prep-guide" class="content-block"></div>
+			</article>
+
+			<article class="card">
+				<h2>4) Ringkasan Gizi per Porsi</h2>
+				<div id="nutrition-summary" class="content-block"></div>
+			</article>
+		</section>
+	</main>
+
+	<footer class="footnote">
+		<p>
+			Edukatif: hasil perhitungan adalah estimasi untuk perencanaan umum, bukan pengganti konsultasi ahli gizi.
+		</p>
+	</footer>
+
+	
+	<script id="meals-data" type="application/json">"[{\"allergies\":[],\"estimatedCost\":22000,\"ingredients\":[\"beras merah\",\"ayam fillet\",\"bayam\",\"bawang putih\",\"minyak\"],\"name\":\"Nasi Merah + Ayam Bumbu Kuning + Tumis Bayam\",\"nutrition\":{\"carb\":61,\"fat\":15,\"kcal\":520,\"protein\":36},\"prep\":\"Masak nasi penuh, ayam dimarinasi lalu tumis setengah matang, bayam ditumis cepat.\",\"slot\":\"main\",\"storage\":\"Ayam setengah matang: kulkas 2 hari. Nasi matang: freezer 5-7 hari. Bayam tumis: kulkas 2 hari.\"},{\"allergies\":[],\"estimatedCost\":17000,\"ingredients\":[\"beras\",\"tempe\",\"telur\",\"timun\",\"selada\",\"cabai\"],\"name\":\"Nasi + Tempe Orek + Telur Rebus + Lalapan\",\"nutrition\":{\"carb\":58,\"fat\":16,\"kcal\":470,\"protein\":26},\"prep\":\"Rebus telur untuk 2-3 hari, tempe diungkep bumbu lalu tumis saat akan makan.\",\"slot\":\"main\",\"storage\":\"Telur rebus: kulkas 3 hari. Tempe matang: kulkas 2 hari. Lalapan segar: 1 hari.\"},{\"allergies\":[\"susu\",\"kacang\"],\"estimatedCost\":13000,\"ingredients\":[\"oat\",\"pisang\",\"susu\",\"kacang tanah\"],\"name\":\"Oat Pisang + Susu + Kacang\",\"nutrition\":{\"carb\":55,\"fat\":10,\"kcal\":360,\"protein\":14},\"prep\":\"Siapkan overnight oat malam sebelumnya, topping ditambahkan saat disajikan.\",\"slot\":\"breakfast\",\"storage\":\"Overnight oat: kulkas 2 hari dalam wadah tertutup.\"},{\"allergies\":[\"telur\"],\"estimatedCost\":14000,\"ingredients\":[\"roti gandum\",\"telur\",\"tomat\"],\"name\":\"Roti Gandum + Telur Orak-arik + Tomat\",\"nutrition\":{\"carb\":34,\"fat\":13,\"kcal\":330,\"protein\":17},\"prep\":\"Telur dibumbui ringan, roti dipanggang sebentar saat akan makan.\",\"slot\":\"breakfast\",\"storage\":\"Telur orak-arik: kulkas 1 hari. Roti: suhu ruang 2-3 hari.\"},{\"allergies\":[],\"estimatedCost\":15000,\"ingredients\":[\"tahu\",\"wortel\",\"kentang\",\"kol\",\"beras\",\"bawang putih\"],\"name\":\"Sup Tahu Sayur + Nasi\",\"nutrition\":{\"carb\":62,\"fat\":9,\"kcal\":410,\"protein\":16},\"prep\":\"Potong semua sayur di awal, rebus sup batch besar untuk 2 hari.\",\"slot\":\"main\",\"storage\":\"Sup matang: kulkas 2 hari. Jangan simpan lebih dari 2 jam di suhu ruang.\"},{\"allergies\":[\"ikan\"],\"estimatedCost\":25000,\"ingredients\":[\"ikan\",\"jagung\",\"brokoli\",\"jeruk nipis\"],\"name\":\"Ikan Panggang + Jagung Rebus + Brokoli\",\"nutrition\":{\"carb\":46,\"fat\":13,\"kcal\":460,\"protein\":34},\"prep\":\"Marinasi ikan 20 menit, panggang separuh matang lalu panaskan saat makan.\",\"slot\":\"main\",\"storage\":\"Ikan matang: kulkas 2 hari. Jagung rebus: kulkas 3 hari.\"},{\"allergies\":[],\"estimatedCost\":21000,\"ingredients\":[\"beras\",\"ayam fillet\",\"wortel\",\"kol\",\"kembang kol\",\"kecap\"],\"name\":\"Nasi + Ayam Kecap + Capcay\",\"nutrition\":{\"carb\":60,\"fat\":14,\"kcal\":500,\"protein\":33},\"prep\":\"Ayam dipotong porsi kecil agar cepat matang, capcay diblansir dulu untuk hemat waktu.\",\"slot\":\"main\",\"storage\":\"Ayam matang: kulkas 2 hari. Sayur capcay: kulkas 2 hari.\"},{\"allergies\":[\"susu\",\"telur\"],\"estimatedCost\":15000,\"ingredients\":[\"pisang\",\"oat\",\"yogurt\",\"telur\"],\"name\":\"Smoothie Pisang Oat + Telur Rebus\",\"nutrition\":{\"carb\":44,\"fat\":10,\"kcal\":350,\"protein\":19},\"prep\":\"Bahan smoothie ditakar di malam hari dalam wadah, blender saat pagi.\",\"slot\":\"breakfast\",\"storage\":\"Smoothie: terbaik langsung diminum. Telur rebus: kulkas 3 hari.\"},{\"allergies\":[\"kedelai\"],\"estimatedCost\":11000,\"ingredients\":[\"apel\",\"pepaya\",\"edamame\"],\"name\":\"Snack Buah + Edamame\",\"nutrition\":{\"carb\":30,\"fat\":4,\"kcal\":210,\"protein\":11},\"prep\":\"Buah dipotong seperlunya, edamame direbus 7 menit lalu simpan porsi kecil.\",\"slot\":\"snack\",\"storage\":\"Edamame matang: kulkas 3 hari. Buah potong: kulkas 1 hari.\"},{\"allergies\":[\"susu\"],\"estimatedCost\":16000,\"ingredients\":[\"yogurt\",\"granola\",\"pisang\",\"stroberi\"],\"name\":\"Yogurt Granola + Buah\",\"nutrition\":{\"carb\":35,\"fat\":7,\"kcal\":240,\"protein\":9},\"prep\":\"Simpan granola terpisah agar tetap renyah, campur saat disajikan.\",\"slot\":\"snack\",\"storage\":\"Yogurt tertutup: kulkas sampai tanggal kedaluwarsa. Buah potong: 1 hari.\"},{\"allergies\":[],\"estimatedCost\":15000,\"ingredients\":[\"oat\",\"ayam fillet\",\"wortel\",\"bawang putih\"],\"name\":\"Bubur Oat Ayam Suwir + Wortel\",\"nutrition\":{\"carb\":45,\"fat\":9,\"kcal\":380,\"protein\":24},\"prep\":\"Masak oat agak kental, ayam disuwir lalu campur saat penyajian.\",\"slot\":\"breakfast\",\"storage\":\"Bubur oat: kulkas 1 hari. Ayam suwir matang: kulkas 2 hari.\"},{\"allergies\":[],\"estimatedCost\":18000,\"ingredients\":[\"jagung\",\"tahu\",\"tempe\",\"kol\",\"bayam\"],\"name\":\"Nasi Jagung + Tahu Tempe Bacem + Urap\",\"nutrition\":{\"carb\":66,\"fat\":14,\"kcal\":490,\"protein\":23},\"prep\":\"Bacem tahu tempe untuk 2 hari, kelapa urap disajikan terpisah.\",\"slot\":\"main\",\"storage\":\"Tahu tempe bacem: kulkas 2 hari. Urap: kulkas 1 hari.\"},{\"allergies\":[\"ikan\"],\"estimatedCost\":23000,\"ingredients\":[\"beras\",\"ikan\",\"cabai\",\"tomat\",\"brokoli\"],\"name\":\"Nasi + Tuna Sambal Matah + Tumis Buncis\",\"nutrition\":{\"carb\":58,\"fat\":13,\"kcal\":500,\"protein\":35},\"prep\":\"Tuna dimarinasi ringan, tumis buncis setengah matang untuk finishing cepat.\",\"slot\":\"main\",\"storage\":\"Tuna matang: kulkas 2 hari. Buncis tumis: kulkas 2 hari.\"},{\"allergies\":[],\"estimatedCost\":21000,\"ingredients\":[\"kentang\",\"ayam fillet\",\"bawang putih\",\"kol\"],\"name\":\"Kentang Panggang + Ayam Lada Hitam + Buncis\",\"nutrition\":{\"carb\":57,\"fat\":15,\"kcal\":510,\"protein\":34},\"prep\":\"Kentang dipanggang batch 2 hari, ayam ditumis lada hitam saat makan.\",\"slot\":\"main\",\"storage\":\"Kentang panggang: kulkas 3 hari. Ayam matang: kulkas 2 hari.\"},{\"allergies\":[\"telur\"],\"estimatedCost\":16000,\"ingredients\":[\"kol\",\"wortel\",\"telur\",\"bawang putih\"],\"name\":\"Mie Shirataki Sayur + Telur Rebus\",\"nutrition\":{\"carb\":48,\"fat\":11,\"kcal\":390,\"protein\":20},\"prep\":\"Rebus shirataki dan telur lebih awal, tumis sayur cepat saat penyajian.\",\"slot\":\"main\",\"storage\":\"Shirataki matang: kulkas 2 hari. Telur rebus: kulkas 3 hari.\"},{\"allergies\":[\"susu\"],\"estimatedCost\":20000,\"ingredients\":[\"ayam fillet\",\"selada\",\"tomat\",\"yogurt\"],\"name\":\"Wrap Ayam Sayur + Saus Yogurt\",\"nutrition\":{\"carb\":44,\"fat\":12,\"kcal\":430,\"protein\":31},\"prep\":\"Ayam dipanggang tipis, sayur dipotong dan disimpan kering agar tetap segar.\",\"slot\":\"main\",\"storage\":\"Ayam matang: kulkas 2 hari. Sayur wrap: kulkas 2 hari.\"},{\"allergies\":[\"susu\"],\"estimatedCost\":15000,\"ingredients\":[\"susu\",\"pisang\",\"stroberi\"],\"name\":\"Puding Chia Susu + Mangga\",\"nutrition\":{\"carb\":29,\"fat\":8,\"kcal\":230,\"protein\":10},\"prep\":\"Campur chia dan susu semalam, topping mangga saat akan makan.\",\"slot\":\"snack\",\"storage\":\"Puding chia: kulkas 2 hari.\"},{\"allergies\":[\"kacang\"],\"estimatedCost\":10000,\"ingredients\":[\"kacang tanah\",\"pisang\"],\"name\":\"Kacang Rebus + Pisang\",\"nutrition\":{\"carb\":33,\"fat\":9,\"kcal\":250,\"protein\":9},\"prep\":\"Rebus kacang untuk 2-3 porsi lalu simpan dalam wadah kecil.\",\"slot\":\"snack\",\"storage\":\"Kacang rebus: kulkas 3 hari. Pisang: suhu ruang 2 hari.\"},{\"allergies\":[\"telur\"],\"estimatedCost\":15000,\"ingredients\":[\"roti gandum\",\"telur\",\"tomat\"],\"name\":\"Roti Gandum + Alpukat + Telur\",\"nutrition\":{\"carb\":40,\"fat\":14,\"kcal\":360,\"protein\":15},\"prep\":\"Roti dipanggang sebentar, telur direbus batch harian, alpukat dihaluskan saat sajian.\",\"slot\":\"breakfast\",\"storage\":\"Telur rebus: kulkas 3 hari. Alpukat tumbuk: terbaik dikonsumsi langsung.\"},{\"allergies\":[\"susu\"],\"estimatedCost\":14000,\"ingredients\":[\"bayam\",\"pisang\",\"oat\",\"susu\"],\"name\":\"Smoothie Bayam Pisang + Oat\",\"nutrition\":{\"carb\":54,\"fat\":8,\"kcal\":340,\"protein\":13},\"prep\":\"Siapkan pack blender berisi bayam-pisang-oat, blender saat pagi.\",\"slot\":\"breakfast\",\"storage\":\"Pack bahan smoothie: kulkas 1 hari.\"}]"</script>
+	<script id="prices-data" type="application/json">"{\"apel\":17000,\"ayam fillet\":35000,\"bawang putih\":9000,\"bayam\":7000,\"beras\":18000,\"beras merah\":23000,\"brokoli\":12000,\"cabai\":6000,\"edamame\":13000,\"granola\":18000,\"ikan\":38000,\"jagung\":9000,\"jeruk nipis\":5000,\"kacang tanah\":9000,\"kecap\":8000,\"kembang kol\":12000,\"kentang\":9000,\"kol\":7000,\"minyak\":15000,\"oat\":18000,\"pepaya\":12000,\"pisang\":10000,\"roti gandum\":19000,\"selada\":9000,\"stroberi\":15000,\"susu\":18000,\"tahu\":9000,\"telur\":12000,\"tempe\":8000,\"timun\":7000,\"tomat\":7000,\"wortel\":6000,\"yogurt\":15000}"</script>
+	
+	<script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.min.js"></script>
+
+	
+	<script src="/js/main.js"></script>
+</body>
+</html>
