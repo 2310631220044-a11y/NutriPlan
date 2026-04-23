@@ -1,0 +1,3 @@
+baseURL = 'https://example.org/'
+locale = 'id-id'
+title = 'NutriPlan'
